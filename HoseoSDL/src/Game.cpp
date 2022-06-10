@@ -37,7 +37,7 @@ void Game::render()
   SDL_RenderPresent(m_pRenderer); 
 
 
-  // 사각형 그리기 
+  // ?�각??그리�?
   /*
 
   SDL_Rect rect[2];
@@ -91,7 +91,7 @@ bool Game::init(const char *title, int xpos, int ypos, int width, int height, in
   } 
   else 
   {
-    return false; // 윈도우 생설 실패 l
+    return false; // ?�도???�설 ?�패 l
   }
   
   m_bRunning = true;
