@@ -17,6 +17,7 @@ Vehicle::Vehicle(int x, int y) : maxSpeed(6), r(16), radius(0), m_dDBoxLength(0)
 	r1 = new Vector2D(0, 0);
 	r2 = new Vector2D(0, 0);
 	r3 = new Vector2D(0, 0);
+	r4 = new Vector2D(0, 0);
 
 	Desir = new Vector2D(0, 0);
 
@@ -36,8 +37,9 @@ void Vehicle::draw(SDL_Renderer* renderer)
 		r2->getX() + pos->getX(), r2->getY() + pos->getY(),
 		r3->getX() + pos->getX(), r3->getY() + pos->getY(),
 		255, 255, 255, 255);
-	boxRGBA(renderer,  pos->getX() - r,  pos->getY() - r/2,
-		 pos->getX() + r + m_dDBoxLength,  pos->getY() + r / 2, 0, 0, 255, 100);
+
+	boxRGBA(renderer, r2->getX() + pos->getX(), r2->getY() + pos->getY() ,
+		r4->getX() + pos->getX() + m_dDBoxLength, r4->getY() + pos->getY(), 0, 0, 255, 100);
 }
 
 void Vehicle::update()
@@ -52,6 +54,7 @@ void Vehicle::update()
 	*r1 = Rotate(-r, -r / 2, radius);
 	*r2 = Rotate(-r, r / 2, radius);
 	*r3 = Rotate(r, 0, radius);
+	*r4 = Rotate(r, -r/2, radius);
 
 	edges();
 }

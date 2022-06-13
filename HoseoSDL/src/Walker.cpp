@@ -29,9 +29,9 @@ void Walker::update()
 	}
 
   target = TheInputHandler::Instance()->getMousePosition(); // 도착하기
-  *force = vehicle->arrive(target);// 도착하기
+  //*force = vehicle->arrive(target);// 도착하기
   //*force = vehicle->Avoidance(m_BG); // 장애물 피하기
-  vehicle->applyForce(force);// 도착하기
+  //vehicle->applyForce(force);// 도착하기
  //vehicle->applyForce(force2); // 장애물 피하기
   vehicle->update();
 

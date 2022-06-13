@@ -38,6 +38,8 @@ private:
 	Vector2D* r1;
 	Vector2D* r2;
 	Vector2D* r3;
+	Vector2D* r4;
+	
 
 	Vector2D* Desir;
 	Vector2D* ToOb;
