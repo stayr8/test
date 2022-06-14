@@ -28,14 +28,16 @@ void Walker::update()
 		m_BG[i]->update();
 	}
 
-  target = TheInputHandler::Instance()->getMousePosition(); // µµÂøÇÏ±â
-  //*force = vehicle->arrive(target);// µµÂøÇÏ±â
-  //*force = vehicle->Avoidance(m_BG); // Àå¾Ö¹° ÇÇÇÏ±â
-  //vehicle->applyForce(force);// µµÂøÇÏ±â
- //vehicle->applyForce(force2); // Àå¾Ö¹° ÇÇÇÏ±â
+  target = TheInputHandler::Instance()->getMousePosition(); // ï¿½Ï±ï¿½
+  *force = vehicle->arrive(target);// ï¿½Ï±ï¿½
+  //*force = vehicle->Avoidance(m_BG); // ï¿½Ö¹ï¿½ ï¿½Ï±ï¿½
+  vehicle->applyForce(force);// ï¿½Ï±ï¿½
+ //vehicle->applyForce(force2); // ï¿½Ö¹ï¿½ ï¿½Ï±ï¿½
   vehicle->update();
 
   *string = steering->Hide(vehicle, m_BG);
+  // *string = steering->arrive(target); 
+
   steering->applyForce(string);
   steering->update();
 
